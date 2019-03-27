@@ -39,9 +39,10 @@ const downloadAndSaveFile = async function(fileId, filePath) {
 sdk.ThreeD.retrieveRevision(args.modelid, args.revisionid).then(async revision => {
   const sceneFileVersion = revision.sceneThreedFiles[revision.sceneThreedFiles.length - 1].version;
   const sceneFileId = revision.sceneThreedFiles[revision.sceneThreedFiles.length - 1].fileId;
+  const sceneFileName = sceneFileVersion >= 4 ? `web_scene_${sceneFileVersion}.i3d` : `web_scene_${sceneFileVersion}.pb`;
   console.log(`Downloading file version ${sceneFileVersion} with fileId ${sceneFileId}`);
 
-  const filePath = path.join(args.directory, sceneFileId.toString());
+  let filePath = path.join(args.directory, sceneFileName);
   const sceneBuffer = await downloadAndSaveFile(sceneFileId, filePath);
   
   const { rootSector, sectors, sceneStats, maps } =
@@ -66,7 +67,14 @@ sdk.ThreeD.retrieveRevision(args.modelid, args.revisionid).then(async revision =
     }, function(err){
   });
 
-  sceneFileName = sceneFileVersion >= 4 ? `web_scene_${sceneFileVersion}.i3d` : `web_scene_${sceneFileVersion}.pb`;
-  const fileMapData = Array.from(fileIds).map(fileId => `${fileId} ${fileId}\n`);
-  console.log('fileMapData: ', fileMapData);
+  const fileMapData = Array.from(fileIds).map(fileId => `${fileId} ${fileId}`).join('\n');
+
+  filePath = path.join(args.directory, 'uploaded_files.txt');
+  fs.writeFile(filePath, fileMapData, err => {
+    if (err) {
+      console.log('Error, could not write to file ', filePath);
+      exit(1);
+    }
+    console.log('Saved file ', filePath);
+  });
 })
