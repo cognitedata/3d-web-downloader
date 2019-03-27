@@ -1,0 +1,19 @@
+{
+  "name": "3d-web-downloader",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "contributors": [
+    "Svenn-Arne Dragly <dragly@cognite.com>",
+    "Anders Hafreager <anders.hafreager@cognite.com>"
+  ],
+  "dependencies": {
+    "@cognite/3d-web-parser": "^0.8.7",
+    "@cognite/sdk": "^1.5.6",
+    "argparse": "^1.0.10",
+    "async": "^2.6.2",
+    "node-fetch": "^2.3.0",
+    "protobufjs": "^6.8.8",
+    "three": "^0.102.1"
+  }
+}
