@@ -2,7 +2,7 @@
 A small script that can be used to download Cognite 3D REVEAL viewer files to run locally.
 
 # How to install
-You will need `yarn` or `npm` to install dependencies.
+You will need `yarn` or `npm` to install dependencies, and `node` to run the script.
 `git clone git@github.com:cognitedata/3d-web-downloader.git`
 Run `yarn` or `npm install` to install dependencies.
 
