@@ -15,6 +15,7 @@ argParser.addArgument([ '-p', '--project' ],{ help: 'Project / tenant name', req
 argParser.addArgument([ '-m', '--modelid' ],{ help: 'Model id', required: true});
 argParser.addArgument([ '-r', '--revisionid' ],{ help: 'Revision id', required: true});
 argParser.addArgument([ '-d', '--directory' ],{ help: 'Target directory', required: true});
+argParser.addArgument([ '--maxversion' ],{ help: 'Max supported file version', defaultValue: 3});
 var args = argParser.parseArgs();
 
 sdk.configure({
@@ -37,8 +38,9 @@ const downloadAndSaveFile = async function(fileId, filePath) {
 }
 
 sdk.ThreeD.retrieveRevision(args.modelid, args.revisionid).then(async revision => {
-  const sceneFileVersion = revision.sceneThreedFiles[revision.sceneThreedFiles.length - 1].version;
-  const sceneFileId = revision.sceneThreedFiles[revision.sceneThreedFiles.length - 1].fileId;
+  let sceneFileVersion = revision.sceneThreedFiles[revision.sceneThreedFiles.length - 1].version;
+  sceneFileVersion = Math.min(sceneFileVersion, args.maxversion);
+  const sceneFileId = revision.sceneThreedFiles[sceneFileVersion - 1].fileId;
   const sceneFileName = sceneFileVersion >= 4 ? `web_scene_${sceneFileVersion}.i3d` : `web_scene_${sceneFileVersion}.pb`;
   console.log(`Downloading file version ${sceneFileVersion} with fileId ${sceneFileId}`);
 
@@ -48,8 +50,8 @@ sdk.ThreeD.retrieveRevision(args.modelid, args.revisionid).then(async revision =
   const { rootSector, sectors, sceneStats, maps } =
   sceneFileVersion >= 4
     ? cogniteParser.parseFullCustomFile(sceneBuffer.buffer, null)
-    : cogniteParser.parseProtobuf(new Uint8Array(sceneBuffer), false);
-
+    : await cogniteParser.parseProtobuf(new Uint8Array(sceneBuffer));
+  
   const fileIds = new Set();
   for(var sector of rootSector.traverseSectors()) {
     sector.instancedMeshGroup.meshes.map(mesh => {
