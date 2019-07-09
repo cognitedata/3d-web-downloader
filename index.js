@@ -69,7 +69,7 @@ sdk.ThreeD.retrieveRevision(args.modelid, args.revisionid).then(async revision =
     }, function(err){
   });
 
-  const fileMapData = Array.from(fileIds).map(fileId => `${fileId} ${fileId}`).join('\n');
+  const fileMapData = Array.from(fileIds).map(fileId => `${fileId}	${fileId}`).join('\n');
 
   filePath = path.join(args.directory, 'uploaded_files.txt');
   fs.writeFile(filePath, fileMapData, err => {
