@@ -55,11 +55,11 @@ sdk.ThreeD.retrieveRevision(args.modelid, args.revisionid).then(async revision =
   const fileIds = new Set();
   for(var sector of rootSector.traverseSectors()) {
     sector.instancedMeshGroup.meshes.map(mesh => {
-      fileIds.add(mesh.fileId)
+      fileIds.add(Number(mesh.fileId))
     });
     
     sector.mergedMeshGroup.meshes.map(mesh => {
-      fileIds.add(mesh.fileId)
+      fileIds.add(Number(mesh.fileId))
     });
   }
 
