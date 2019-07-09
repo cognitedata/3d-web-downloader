@@ -63,9 +63,9 @@ sdk.ThreeD.retrieveRevision(args.modelid, args.revisionid).then(async revision =
     });
   }
 
-  async.eachLimit(fileIds, 10, function(fileId, callback) {
+  const result = await async.eachLimit(fileIds, 10, async function(fileId, callback) {
     const filePath = path.join(args.directory, fileId.toString());
-    downloadAndSaveFile(fileId, filePath);
+    await downloadAndSaveFile(fileId, filePath);
     }, function(err){
   });
 
