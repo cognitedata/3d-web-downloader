@@ -12,7 +12,7 @@
     "@cognite/sdk": "^2.1.0",
     "argparse": "^1.0.10",
     "async": "^2.6.2",
-    "node-fetch": "^2.3.0",
+    "node-fetch": "^2.6.0",
     "protobufjs": "^6.8.8",
     "three": "^0.102.1"
   }
