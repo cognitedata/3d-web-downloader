@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@cognite/3d-web-parser@^0.12.2":
-  version "0.12.2"
-  resolved "https://registry.yarnpkg.com/@cognite/3d-web-parser/-/3d-web-parser-0.12.2.tgz#42c5be02bd31d095d189775910300ef8090888f5"
-  integrity sha512-FoY1b7l+QfRAChYZr0+xURr0be4Bov/jG7AEycQWUtvte36mySY3+lqnhHDvPey9DyNWU2GZOW+3uRXMnzkf+A==
+"@cognite/3d-web-parser@^0.13.5":
+  version "0.13.5"
+  resolved "https://registry.yarnpkg.com/@cognite/3d-web-parser/-/3d-web-parser-0.13.5.tgz#9c3c47cbf5eeaa73744888bff2d8916cdbf6ff67"
+  integrity sha512-J/7KlOLw8S9vSVvFbElJC6dt6JKs41L425vzXD1XxBw8yT3o2V+wP8AtwUPJ/9k5E+aMAB9qxTZ9O/AE2Yb6gA==
   dependencies:
     protobufjs "^6.8.8"
 
