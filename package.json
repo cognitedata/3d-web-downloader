@@ -8,7 +8,7 @@
     "Anders Hafreager <anders.hafreager@cognite.com>"
   ],
   "dependencies": {
-    "@cognite/3d-web-parser": "^0.12.2",
+    "@cognite/3d-web-parser": "^0.13.5",
     "@cognite/sdk": "^2.1.0",
     "argparse": "^1.0.10",
     "async": "^2.6.2",
