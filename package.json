@@ -9,7 +9,7 @@
   ],
   "dependencies": {
     "@cognite/3d-web-parser": "^0.12.2",
-    "@cognite/sdk": "^2.1.0",
+    "@cognite/sdk": "^2.17.0",
     "argparse": "^1.0.10",
     "async": "^2.6.2",
     "node-fetch": "^2.3.0",
