@@ -201,10 +201,10 @@ strict-uri-encode@^1.0.0:
   resolved "https://registry.yarnpkg.com/strict-uri-encode/-/strict-uri-encode-1.1.0.tgz#279b225df1d582b1f54e65addd4352e18faa0713"
   integrity sha1-J5siXfHVgrH1TmWt3UNS4Y+qBxM=
 
-three@^0.102.1:
-  version "0.102.1"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.102.1.tgz#fc08b6b11860cf59e8cd45b7e90e34d1d1a8cbd6"
-  integrity sha512-btHBdww/Es4vdBkB2GjTE9mpj0vy8tgtxkX7ne7uxySXV8zoGxWJv1N88BydxnCqvAfmD4ZUTqPeESO7oDgeOQ==
+three@^0.126.0:
+  version "0.126.0"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.126.0.tgz#924818341cd4441ef247e3cbf236f6160b90a216"
+  integrity sha512-/MecvboUefStCkUfXLImoJxthN+FoLPcEP7pz1r1Dd9i8BPGGuj+S1sOPRvW4Z+ViZjP2oWWm1inNC/MT52ybA==
 
 url@^0.11.0:
   version "0.11.0"
