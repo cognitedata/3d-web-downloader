@@ -1,0 +1,30 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "@cognite/sdk"
+    versions:
+    - 3.3.2
+    - 3.3.3
+    - 3.3.4
+    - 3.3.5
+    - 3.3.6
+    - 3.4.0
+    - 3.5.0
+    - 4.0.0
+    - 4.0.1
+    - 4.0.2
+  - dependency-name: three
+    versions:
+    - 0.125.1
+    - 0.125.2
+  - dependency-name: protobufjs
+    versions:
+    - 6.10.2
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
