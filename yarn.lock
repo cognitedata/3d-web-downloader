@@ -2,6 +2,20 @@
 # yarn lockfile v1
 
 
+"@azure/msal-browser@^2.11.0":
+  version "2.15.0"
+  resolved "https://registry.yarnpkg.com/@azure/msal-browser/-/msal-browser-2.15.0.tgz#78ee195b36fde45037f198342475a2eef187f4bd"
+  integrity sha512-Du0BHQiDQgkqg6OoKovUZWdEIZbTnhh/lma7QLyi5jFKDekk78wXsFIOJLUcFoY97+ZhB+Y2WQOYT1DJphAdCg==
+  dependencies:
+    "@azure/msal-common" "^4.4.0"
+
+"@azure/msal-common@^4.4.0":
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/@azure/msal-common/-/msal-common-4.4.0.tgz#818526042f78838ebc332fb735e7de64d8bccb45"
+  integrity sha512-Qrs33Ctt2KM7NxArFPIUKc8UbIcm7zYxJFdJeQ9k7HKBhVk3e88CUz1Mw33cS/Jr+YA1H02OAzHg++bJ+4SFyQ==
+  dependencies:
+    debug "^4.1.1"
+
 "@cognite/3d-web-parser@^0.12.2":
   version "0.12.2"
   resolved "https://registry.yarnpkg.com/@cognite/3d-web-parser/-/3d-web-parser-0.12.2.tgz#42c5be02bd31d095d189775910300ef8090888f5"
@@ -9,15 +23,25 @@
   dependencies:
     protobufjs "^6.8.8"
 
-"@cognite/sdk@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@cognite/sdk/-/sdk-2.1.0.tgz#8ef70570ca0140d99a356148b677508e0ab7c19e"
-  integrity sha512-dHpLjSGSSvpzOV7WCjgMd16dMjnc87M9ahjEgtYyol7JXMQW9jzVfvnpzjeavZvz53+DeqOiCMNH/CR/UjIz0Q==
+"@cognite/sdk-core@^2.1.4":
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/@cognite/sdk-core/-/sdk-core-2.1.4.tgz#2a7133f953d2d841cb55453fb9ea4d610420d3e7"
+  integrity sha512-w6fhiKm0LZ1iLnZpOzJFF/lXug/nzBr+k4ZKzrcWiI1qhScdBzM6keh+BRfAzegaFMA949JDQP3znDvpEG1xZA==
   dependencies:
-    axios "0.18.1"
+    "@azure/msal-browser" "^2.11.0"
+    cross-fetch "^3.0.4"
+    is-buffer "^2.0.5"
     lodash "^4.17.11"
     query-string "^5.1.1"
     url "^0.11.0"
+
+"@cognite/sdk@^4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@cognite/sdk/-/sdk-4.3.0.tgz#c4874e1f8959b4a3fa2755974fa4aed911517f21"
+  integrity sha512-jIYB2am2uhoVNqMYLfinvSaA734+MVK1G9Qhb/EAXZxKFNa4mEva2rAyDWagathZjyY+VI5aEjfSthvypCt1WA==
+  dependencies:
+    "@cognite/sdk-core" "^2.1.4"
+    lodash "^4.17.11"
 
 "@protobufjs/aspromise@^1.1.1", "@protobufjs/aspromise@^1.1.2":
   version "1.1.2"
@@ -96,37 +120,29 @@ async@^2.6.2:
   dependencies:
     lodash "^4.17.11"
 
-axios@0.18.1:
-  version "0.18.1"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.18.1.tgz#ff3f0de2e7b5d180e757ad98000f1081b87bcea3"
-  integrity sha512-0BfJq4NSfQXd+SkFdrvFbG7addhYSBA2mQwISr46pD6E5iqkWg02RAs8vyTT/j0RTnoYmeXauBuSv1qKwR179g==
+cross-fetch@^3.0.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.1.4.tgz#9723f3a3a247bf8b89039f3a380a9244e8fa2f39"
+  integrity sha512-1eAtFWdIubi6T4XPy6ei9iUFoKpUkIF971QLN8lIvvvwueI65+Nw5haMNKUwfJxabqlIIDODJKGrQ66gxC0PbQ==
   dependencies:
-    follow-redirects "1.5.10"
-    is-buffer "^2.0.2"
+    node-fetch "2.6.1"
 
-debug@=3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
-  integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
+debug@^4.1.1:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
+  integrity sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==
   dependencies:
-    ms "2.0.0"
+    ms "2.1.2"
 
 decode-uri-component@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
   integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
 
-follow-redirects@1.5.10:
-  version "1.5.10"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
-  integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
-  dependencies:
-    debug "=3.1.0"
-
-is-buffer@^2.0.2:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-2.0.3.tgz#4ecf3fcf749cbd1e472689e109ac66261a25e725"
-  integrity sha512-U15Q7MXTuZlrbymiz95PJpZxu8IlipAp4dtS3wOdgPXx3mqBnslrWU14kxfHB+Py/+2PVKSr37dMAgM2A4uArw==
+is-buffer@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-2.0.5.tgz#ebc252e400d22ff8d77fa09888821a24a658c191"
+  integrity sha512-i2R6zNFDwgEHJyQUtJEk0XFi1i0dPFn/oqjK3/vPCcDeJvW5NQ83V8QbicfF1SupOaB0h8ntgBC2YiE7dfyctQ==
 
 lodash@^4.17.11:
   version "4.17.11"
@@ -138,10 +154,15 @@ long@^4.0.0:
   resolved "https://registry.yarnpkg.com/long/-/long-4.0.0.tgz#9a7b71cfb7d361a194ea555241c92f7468d5bf28"
   integrity sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5bY4JNZEwbUiMhV+MA==
 
-ms@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
-  integrity sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
+ms@2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
+  integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
+
+node-fetch@2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
+  integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
 node-fetch@^2.3.0:
   version "2.3.0"
